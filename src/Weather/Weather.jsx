@@ -6,7 +6,7 @@ import Card from "../Card/Card";
 
 
 function Weath1() {
-    const [weather, setweather] = useState("");
+    const [weather, setweather] = useState(null);
     const [city, setcity] = useState("");
     const [loading, setloading] = useState(false);
 
@@ -38,21 +38,21 @@ function Weath1() {
             <button style={{ backgroundColor: "lightgreen", borderRadius: "5px" }} onClick={fetchWeather}>Submit</button>
             <div   id="second" className="weather-cards" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "15px" }}>
                 {loading ? (
-                    <p>Loading data…</p>
+                    <p>Loading data...</p>
                 ) : (weather && (
                         <>
-                            <Card
-                                title="Tempreature" value={`${weather.current.temp_c}C`}
-                            />
-                            <Card
-                                title="Humidity" value={`${weather.current.humidity}%`}
-                            />
-                            <Card
-                                title="Condition" value={weather.current.condition.text}
-                            />
-                            <Card
-                                title="Wind-Speed" value={`${weather.current.wind_kph}`}
-                            />
+                            <div  id="first" className="weather-card">
+                                <Card title="Temperature" value={`${weather.current.temp_c}C`} />
+                            </div>
+                            <div  id="first" className="weather-card">
+                                <Card title="Humidity" value={`${weather.current.humidity}%`} />
+                            </div>
+                            <div  id="first"  className="weather-card">
+                                <Card title="Condition" value={weather.current.condition.text} />
+                            </div>
+                            <div  id="first" className="weather-card">
+                                <Card title="Wind-Speed" value={`${weather.current.wind_kph}`} />
+                            </div>
                         </>
                     )
                 )}
