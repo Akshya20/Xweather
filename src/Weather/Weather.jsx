@@ -36,9 +36,9 @@ function Weath1() {
             <input type="text" value={city}
                 onChange={(e) => { setcity(e.target.value) }}></input>
             <button style={{ backgroundColor: "lightgreen", borderRadius: "5px" }} onClick={fetchWeather}>Submit</button>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "15px" }}>
+            <div   id="second" className="weather-cards" style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "15px" }}>
                 {loading ? (
-                    <p>Loading...</p>
+                    <p>Loading data…</p>
                 ) : (weather && (
                         <>
                             <Card
