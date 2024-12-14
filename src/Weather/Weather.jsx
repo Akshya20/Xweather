@@ -33,7 +33,7 @@ function Weath1() {
     }
     return (
         <div style={{ backgroundColor: "lightblue", width: "100%", height: "100%" }}>
-            <input value={city}
+            <input type="text value={city}
                 onChange={(e) => { setcity(e.target.value) }}></input>
             <button style={{ backgroundColor: "lightgreen", borderRadius: "5px" }} onClick={fetchWeather}>Submit</button>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "15px" }}>
